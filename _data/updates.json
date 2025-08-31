@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Date is set - 8th and 9th of November",
+        "src": "assets/img/updates/ti07_step_02.jpg",
+        "alt": ""
+    },
+    {
+        "title": "Location is confirmed",
+        "src": "assets/img/updates/ti07_step_01.jpg",
+        "alt": "",
+        "sliderAction": "google-map-area",
+        "sliderText": "See location"
+    }
+]

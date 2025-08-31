@@ -1,0 +1,14 @@
+{
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "serve": "deno --allow-read --allow-write --allow-env --allow-net --allow-scripts --allow-ffi npm:@11ty/eleventy@canary --serve",
+    "build-dev": "deno --allow-read --allow-write --allow-env --allow-net --allow-scripts --allow-ffi npm:@11ty/eleventy@canary && rclone sync _site/ sftp-ti:domains/dev.twilightimperium.nl/public_html/ --progress",
+    "build-prd": "deno task build-dev  && rclone sync _site/ sftp-ti:public_html/ --progress"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "@11ty": "npm:@11ty/eleventy@canary",
+    "@11ty/image": "npm:@11ty/eleventy-img"
+  }
+}

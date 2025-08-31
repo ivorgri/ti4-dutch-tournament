@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{{ global.siteTitle }}</title>
+        {% include "links.njk" %}
+    </head>
+    <body class="">
+        {% import "headers.njk" as headers %}
+        <!-- Header Area wrapper Starts -->
+        <header
+            id="header-wrap">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar gallery-navbar">
+                <div
+                    class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#main-navbar"
+                            aria-controls="main-navbar"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="icon-menu"></span>
+                            <span class="icon-menu"></span>
+                            <span class="icon-menu"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main-navbar">
+                        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                            <li class="nav-item active">
+                                {% if page.url == '/' %}
+                                    <a class="nav-link" href="#header-wrap">
+                                        Home
+                                    </a>
+                                {% else %}
+                                    <a class="nav-link" href="/#header-wrap">
+                                        Home
+                                    </a>
+                                {% endif %}
+                            </li>
+                            {% for key, section in sections %}
+                                {% if section.includeInNav %}
+                                    <li class="nav-item">
+                                        {% if page.url == '/' %}
+                                            <a class="nav-link" href="#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% else %}
+                                            <a class="nav-link" href="/#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="mobile-menu">
+                    <li>
+                        {% if page.url == '/' %}
+                            <a class="page-scrool" href="#header-wrap">Home</a>
+                        {% else %}
+                            <a class="page-scrool" href="/#header-wrap">Home</a>
+                        {% endif %}
+                    </li>
+                    {% for key, section in sections %}
+                        {% if section.includeInNav %}
+                            <li>
+                                {% if page.url == '/' %}
+                                    <a class="page-scrool" href="#{{ section.sectionId }}">
+                                        {{ section.title }}
+                                    </a>
+                                {% else %}
+                                    <a class="page-scrool" href="/#{{ section.sectionId }}">
+                                        {{ section.title }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <!-- Mobile Menu End -->
+            </nav>
+            <!-- Navbar End -->
+        </header>
+        
+        <!-- Gallery Section Start -->
+        <section id="{{ sections.gallery.sectionId }}" class="section-padding">
+            {% for year in gallery.sortedYears %}
+                {% set galleryImages = gallery.byYear[year] %}
+                <div id="{{sections.gallery.sectionId}}-{{year}}" class="container">
+                    {{ headers.sectionHeader(sections.gallery.title + " - " + year, global.siteTitle, year, gallery.yearMetadata[year].date ) }}
+                    <div class="row">
+                        {% for galleryImage in galleryImages %}
+                            <div class="col-md-6 col-sm-6 col-lg-4">
+                                <div class="gallery-box">
+                                    <div class="img-thumb">
+                                        <picture>
+                                            <img loading="lazy" class="img-fluid" src="{{ galleryImage.src }}" alt="{{ galleryImage.alt }}">
+                                        </picture>
+                                    </div>
+                                    <div class="overlay-box text-center">
+                                        <a class="lightbox" href="{{ galleryImage.src }}">
+                                            <i class="lni lni-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+            <!-- Gallery Section End -->
+        
+        <!-- Footer Start -->
+        <footer class="footer-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+                        <h3>Legal disclaimer</h3>
+                        <p>
+                            {{ sections.footer.content }}
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+                        <h3>QUICK LINKS</h3>
+                        <ul>
+                            <li>
+                                {% if page.url == '/' %}
+                                    <a href="#header-wrap">Home</a>
+                                {% else %}
+                                    <a href="/#header-wrap">Home</a>
+                                {% endif %}
+                            </li>
+                            {% for key, section in sections %}
+                                {% if section.includeInNav %}
+                                    <li>
+                                        {% if page.url == '/' %}
+                                            <a href="#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% else %}
+                                            <a href="/#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="widget">
+                            <h5 class="widget-title">FOLLOW US ON</h5>
+                            <ul class="footer-social">
+                                <li>
+                                    <a class="discord" href="https://discord.gg/Wm9anKwC" target="_blank">
+                                        <i class="lni lni-discord"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+                        <h3>SUBSCRIBE US</h3>
+                        <div class="widget">
+                            <div class="newsletter-wrapper">
+                                <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                                    <div class="form-group is-empty">
+                                        <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Your email" required="">
+                                        <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-pointer"></i></button>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h5 class="widget-title">FOLLOW US ON</h5>
+                            <ul class="footer-social">
+                                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="lni-linkedin-original"></i></a></li>
+                                <li><a class="google-plus" href="#"><i class="lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        <!-- Copyright Start -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info">
+                            <p>© Developed by Ivor Grisel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+        <!-- Go to Top Link -->
+        <a href="#" class="back-to-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+        <div id="preloader">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script>
+            {% include "assets/js/jquery-min.js" %}
+            {% include "assets/js/popper.min.js" %}
+            {% include "assets/js/bootstrap.min.js" %}
+            {% include "assets/js/jquery.countdown.min.js" %}
+            {% include "assets/js/jquery.nav.js" %}
+            {% include "assets/js/jquery.easing.min.js" %}
+            {% include "assets/js/wow.js" %}
+            {% include "assets/js/jquery.slicknav.js" %}
+            {% include "assets/js/nivo-lightbox.js" %}
+            {% include "assets/js/main.js" %}
+            {% include "assets/js/form-validator.min.js" %}
+            {% include "assets/js/contact-form-script.min.js" %}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "uneven": [{
+        "question": "Will there be any judges?",
+        "answer":"As mentioned by Hunter on the SCPT podcast once (paraphrasing here...): there are six people sitting on the table who either know the rules or can do a Reddit search. So there are no official judges, and you are expected to resolve any rules discussions on your own table. If you really need help, the organizer will be around to help out (for quicker searches - as he'll have a laptop ready)."
+    },{
+        "question": "How about the draft?",
+        "answer": "All drafting will happen through [https://ti4-lab.fly.dev](https://ti4-lab.fly.dev). The organization will make the groups.<br><br>For Saturday, the draft will start about a month in advance. This is so everybody has enough time to reply. The slices will consist of the SCPT 2023 finals slices. The factions will consist of a random 7 factions (so also different per group).<br><br>For Sunday, the draft will start as soon as your game is ready on Saturday. You will be added to the applicable group (see FAQ about \"what to do on Sunday\") and drafting will start at that point. So an early finished game on Saturday will mean a quick pick for the game on Sunday. The slices will consist of the SCPT 2024 finals slices (side note: we will exclude the additional wormhole that was incorrectly added in that finale). "
+    },{
+        "question": "How about deals during games?",
+        "answer": "To keep time short, deals will be done over the table. So no discussing stuff somewhere else or using other mediums. Do it on the table, so everybody knows what is happening. And as mentioned, this is also done to speed up the game. "
+    },{
+        "question": "How do we keep games short?",
+        "answer": "Apart from \"above the table\" deals (see other FAQ), we'll also use timers. In case of players taking a long time to discuss something or to come to a decision, the group can decide to start a timer on somebody's smartphone. Put the timer on 10 minutes. The situation should be resolved within this timeframe, or the turn is considered passed. This should severly quicken the game.  "
+    },{
+        "question": "What if I provide my game to play?",
+        "answer": "First of all: you're a hero!<br><br>On the days of play, the organization will make an announcement that people should respect the games they are playing with. So no stickiness! Eating and drinking should be done mostly in the general area.<br><br>We will try to have players matched to the boardgame that they provided. This will be easier on Saturday than on Sunday. So we'll see how we do this on Sunday.<br><br>Setup on Saturday is expected to happen around 9-ish in the morning. Setup for Sunday will be done by the organization.<br><br>If there is a reason you need to leave early on Sunday, but your game is still being played with, leave instructions with the organization on how you want the game to be cleaned up and your address. The organization will make sure the game gets back to you (most likely on Monday somewhere). "
+    },{
+        "question": "How about language?",
+        "answer": "We have some international players (coming from aboard, or living in the Netherlands). If the complete table is Dutch, there is no problem talking Dutch, but if there is even only one person not talking Dutch, of course you should talk English. "
+    }],
+    "even": [{
+        "question": "Where is the tournament?",
+        "answer": "The event will take place in the [Muntmeesters](https://muntmeesters.org/), which can be found on Leidsekade 117 - 118, 3531HD, Utrecht"
+    },{
+        "question": "If I don't win on Saturday, what can I do on Sunday?",
+        "answer": "On Sunday, the finals will be played by the players that won on Saturday. But what will we do with the people that don't win on Saturday?<br><br>Each game on Saturday will have one winner (duh), but 2nd, 3rd, 4th, 5th and 6th place will also be determined. This will be in order of points. If there is a tie for the points between players, the initiative will determine the \"winner\" of that tie. For example: if two players are tied with 9 Victory Points, the player with the higher initiative (c.q. lower strategy card) will be 2nd in that group (and the other player 3rd).<br><br>We assume that some people might not want to spend the full two days on the tournament. So be aware that you might be playing a game with a lower player count on the second day. So if you know people that might want to backup on Sunday if there's a spot free, don't hesitate to invite them. "
+    },{
+        "question": "How about food and drinks?",
+        "answer": "You will need to bring your own drinks and food. Keep in mind that you most likely will be playing with the physical game from somebody else - try to keep stickiness to a minimum! In regards to lunch/diner, we can always order out. The organizer will go around for those interested and he'll arrange the complete order. "
+    }]
+}

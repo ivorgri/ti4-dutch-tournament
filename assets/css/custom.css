@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'HandelGothic';
+  src: url('../fonts/handel-gothic-d-bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'HandelGothic', sans-serif;
+}
+
+/* Sign-up Ticket */
+.no-webp .sign-up-section {
+  background: url("../img/background/bg-sign-up.jpeg");
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+}
+
+.webp .sign-up-section {
+  background: url("../img/background/bg-sign-up.webp");
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+}
+
+.sign-up-section .section-title-header .section-title {
+  color: #fff;
+}
+
+.sign-up-section .section-title-header p {
+  color: #fff;
+}
+
+.sign-up-section .price-block-wrapper {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 30px;
+}
+
+.sign-up-section .price-block-wrapper .icon {
+  padding: 20px;
+}
+
+.sign-up-section .price-block-wrapper .icon i {
+  font-size: 60px;
+  color: #E91E63;
+}
+
+.sign-up-section .price-block-wrapper .colmun-title {
+  margin-top: 15px;
+}
+
+.sign-up-section .price-block-wrapper .colmun-title h5 {
+  font-size: 18px;
+  line-height: 30px;
+  color: #212121;
+  margin-bottom: 5px;
+  font-weight: 700;
+  background: #ffffff;
+  text-transform: uppercase;
+}
+
+.sign-up-section .price-block-wrapper .price {
+  padding-bottom: 10px;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+}
+
+.sign-up-section .price-block-wrapper .price h2 {
+  font-size: 38px;
+  color: #5c5c5c;
+  line-height: 42px;
+  margin: 0;
+}
+
+.sign-up-section .price-block-wrapper .price p {
+  font-size: 15px;
+  color: #5c5c5c;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-transform: uppercase;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+}
+
+.sign-up-section .price-block-wrapper .pricing-list {
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sign-up-section .price-block-wrapper .pricing-list ul {
+  padding-bottom: 15px;
+}
+
+.sign-up-section .price-block-wrapper .pricing-list ul li {
+  font-size: 15px;
+  color: #212121;
+  font-weight: 400;
+  padding: 2px 0px;
+}
+
+.sign-up-section .price-block-wrapper .pricing-list ul li i {
+  margin-right: 7px;
+  font-size: 12px;
+  color: #E91E63;
+}
+
+.sign-up-section .price-block-wrapper .btn i {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.carousel-item {
+  max-height: 100vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+}
+
+#main-slide .carousel-control .ti-chevron-left,
+#main-slide .carousel-control .ti-chevron-right {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-slide .carousel-control .ti-chevron-left path,
+#main-slide .carousel-control .ti-chevron-right path {
+  fill: white
+}
+
+#main-slide .carousel-control .ti-chevron-left {
+  left: 15px;
+}
+
+#main-slide .carousel-control .ti-chevron-right {
+  right: 15px;
+}
+
+.navbar {
+  background: #222222;
+}
+
+/*--------------------------------
+
+Lineicons Free Regular Web Font
+
+-------------------------------- */
+@font-face {
+    font-family: 'Lineicons';
+    src: url('../fonts/Lineicons.eot');
+    src: url('../fonts/Lineicons.eot') format('embedded-opentype'), url('../fonts/Lineicons.woff2') format('woff2'), url('../fonts/Lineicons.woff') format('woff'), url('../fonts/Lineicons.ttf') format('truetype'), url('../fonts/Lineicons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* --------------------------------
+  
+  icons
+  
+  -------------------------------- */
+  .lni {
+    display: inline-block;
+    font: normal normal normal 32px/1 'Lineicons';
+    speak: none;
+    text-transform: none;
+    /* Better Font Rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /*------------------------
+    font icons
+  -------------------------*/
+  
+  .lni-500px::before {
+    content: "\ea01";
+  }
+
+  .lni-discord::before {
+    content: "\eab2";
+  }
+
+  .lni-chevron-up::before {
+    content: "\ea80";
+  }
+
+  .lni-check::before {
+    content: "\ea78";
+  }
+
+  .lni-xmark::before {
+    content: "\ec52";
+  }
+
+  .lni-pencil-1::before {
+    content: "\eb90";
+  }
+
+  .lni-plus::before {
+    content: "\eba1";
+  }
+
+  .lni-file-pencil::before {
+    content: "\eadf";
+  }
+
+  .footer-area .footer-social li .discord:hover {
+    background: #7785cc;
+  }
+
+
+  

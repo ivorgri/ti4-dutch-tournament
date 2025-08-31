@@ -1,0 +1,40 @@
+{
+    "saturday": {
+        "date": "8 November",
+        "timeslots": [{
+            "title": "Setup (for players providing the game)",
+            "startTime":"09:00",
+            "endTime":"09:30",
+            "description": "For those players providing the game, it would be great to start the setup of the games at around 09:00. That will provide us with enough time to set everything up for the arrival of the players at 09:30."
+        }, {
+            "title": "Welcome",
+            "startTime": "09:30",
+            "endTime": "10:00",
+            "description": "Players will be welcomed by the organization. As we expect people to arrive on different times, players can already take place at their assigned table and interact with the other players there. "
+        }, {
+            "title": "Semi-finals",
+            "startTime": "10:00",
+            "endTime": "?",
+            "description": "Game on!"
+        }]
+    },
+    "sunday": {
+        "date": "9 November",
+        "timeslots": [{
+            "title": "Welcome back",
+            "startTime": "09:30",
+            "endTime": "10:00",
+            "description": "Same as yesterday, players will be seated on their respective tables and pre-game socializing can commence."
+        },{
+            "title": "Finals",
+            "startTime": "10:00",
+            "endTime": "?",
+            "description": "Game on!"
+        },{
+            "title": "Coronation",
+            "startTime": "Dependent the finals",
+            "endTime": "?",
+            "description": "There will be a small ceremony for the winners of the Unofficial Dutch TI tournament 2024.<br>After that, we'll first do cleanup (especially cleaning up the games, as people might need/want to leave). For those people that want to stay, we can look into chilling out. We'll just see how this goes. "
+        }]
+    }
+}

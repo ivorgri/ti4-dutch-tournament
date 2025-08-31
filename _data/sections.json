@@ -1,0 +1,54 @@
+{
+    "signup": {
+        "title": "Sign up",
+        "sectionId": "",
+        "includeInNav": false,
+        "price": "15",
+        "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb_laeEIVVCwE5lsxNW-rfrsAPb3Als2COtER9zmm3o-KE1w/viewform?usp=header"
+    },
+    "location": {
+        "title": "Location",
+        "sectionId": "google-map-area",
+        "includeInNav": true,
+        "googleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4903.074005388035!2d5.092454976164832!3d52.08815776811271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f7b39c96fc5%3A0x72e6af8cfa027f47!2sMuntMeesters!5e0!3m2!1snl!2snl!4v1726602571602!5m2!1snl!2snl"
+    },
+    "eventschedule": {
+        "title": "Event schedule",
+        "sectionId": "schedules",
+        "includeInNav": true
+    },
+    "gallery": {
+        "title": "Gallery",
+        "sectionId": "gallery",
+        "includeInNav": true
+    },
+    "faq": {
+        "title": "FAQ",
+        "sectionId": "faq",
+        "includeInNav": true
+    },
+    "contact": {
+        "title": "Contact Us",
+        "sectionId": "contact",
+        "includeInNav": true,
+        "namePlaceholder": "First name",
+        "nameError": "Please enter your name",
+        "emailPlaceholder": "Email",
+        "emailError": "Please enter you email",
+        "subjectPlaceholder": "Subject",
+        "subjectError": "Please enter your message subject",
+        "messagePlaceholder": "What is your question?",
+        "messageError": "Write your message"
+    },
+    "supporters": {
+        "title": "Supporters",
+        "sectionId": "sponsors",
+        "includeInNav": true
+    },
+    "footer": {
+        "title": "Footer",
+        "sectionId": "footer",
+        "includeInNav": false,
+        "content": "This tournament is an independent event and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Asmodee or Fantasy Flight Games, or any of their subsidiaries or affiliates. The names Asmodee and Fantasy Flight Games as well as related names, marks, emblems, and images are registered trademarks of their respective owners."
+    }
+}

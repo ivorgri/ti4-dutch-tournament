@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{{ global.siteTitle }} - {{ global.tournamentYear }} - {{ global.tournamentDate }}</title>
+        {% include "links.njk" %}
+    </head>
+    <body class="">
+        {% import "headers.njk" as headers %}
+        <!-- Header Area wrapper Starts -->
+        <header
+            id="header-wrap">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+                <div
+                    class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#main-navbar"
+                            aria-controls="main-navbar"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="icon-menu"></span>
+                            <span class="icon-menu"></span>
+                            <span class="icon-menu"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main-navbar">
+                        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#header-wrap">
+                                    Home
+                                </a>
+                            </li>
+                            {% for key, section in sections %}
+                                {% if section.includeInNav %}
+                                    <li class="nav-item">
+                                        {% if page.url == '/' %}
+                                            <a class="nav-link" href="#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% else %}
+                                            <a class="nav-link" href="/#{{ section.sectionId }}">
+                                                {{ section.title }}
+                                            </a>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mobile Menu Start -->
+                <ul class="mobile-menu">
+                    <li>
+                        <a class="page-scrool" href="#header-wrap">Home</a>
+                    </li>
+                    {% for key, section in sections %}
+                        {% if section.includeInNav %}
+                            <li>
+                                <a class="page-scrool" href="#{{ section.sectionId }}">
+                                    {{ section.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <!-- Mobile Menu End -->
+            </nav>
+            <!-- Navbar End -->
+            <!-- Main Carousel Section Start -->
+            <div id="main-slide" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {% for update in updates %}
+                        <li data-target="#main-slide" data-slide-to="{{ loop.index }}" class="active"></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    {% for update in updates %}
+                        <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
+                            <picture>
+                                <img height="960px" max-height="960px" class="d-block w-100" src="{{ update.src }}" alt="{{ update.alt }}"/>
+                            </picture>
+                            <div class="carousel-caption d-md-block">
+                                <p class="fadeInUp wow" data-wow-delay=".6s">{{ global.siteTitle }} {{ global.tournamentYear }} - {{ global.tournamentDate }}</p>
+                                <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ update.title }}</h1>
+                                {% if update.sliderAction %}
+                                    <a href="#{{ update.sliderAction }}" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s">{{ update.sliderText }}</a>
+                                {% endif %}
+                                {% if update.sliderLink %}
+                                    <a href="{{ update.sliderLink }}" class="fadeInRight wow btn btn-border btn-lg" data-wow-delay=".6s">{{ update.sliderText }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
+                    <span class="carousel-control" aria-hidden="true">
+                        <i class="ti-chevron-left">
+                            <svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.2335 5.21967C15.5263 5.51256 15.5263 5.98744 15.2335 6.28033L9.51379 12L15.2335 17.7197C15.5263 18.0126 15.5263
+                                        18.4874 15.2335 18.7803C14.9406 19.0732 14.4657 19.0732 14.1728 18.7803L7.92279 12.5303C7.6299 12.2374 7.6299 11.7626
+                                        7.92279 11.4697L14.1728 5.21967C14.4657 4.92678 14.9406 4.92678 15.2335 5.21967Z"
+                                    fill="#323544"/>
+                            </svg>
+                        </i>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#main-slide" role="button" data-slide="next">
+                    <span class="carousel-control" aria-hidden="true">
+                        <i class="ti-chevron-right">
+                            <svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="rotate(180 12.5 12)">
+                                    <path
+                                        d="M15.2335 5.21967C15.5263 5.51256 15.5263 5.98744 15.2335 6.28033L9.51379 12L15.2335 17.7197C15.5263 18.0126 15.5263
+                                            18.4874 15.2335 18.7803C14.9406 19.0732 14.4657 19.0732 14.1728 18.7803L7.92279 12.5303C7.6299 12.2374 7.6299 11.7626
+                                            7.92279 11.4697L14.1728 5.21967C14.4657 4.92678 14.9406 4.92678 15.2335 5.21967Z"
+                                        fill="#323544"/>
+                                </g>
+                            </svg>
+                        </i>
+                    </span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- Main Carousel Section End -->
+        </header>
+        <!-- Countdown Section Start -->
+        <section class="countdown-timer section-padding">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="heading-count">
+                            <h2 class="wow fadeInDown" data-wow-delay="0.2s">Tournament on the 8th and 9th of November Will Start In</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                            <div id="clock" class="time-count"></div>
+                        </div>
+                        <a
+                            href="https://@{ url_baseUrl}/assets/ical/unofficial_dutch_ti_tournament_2025.ics"
+                            class="btn btn-common wow fadeInUp"
+                            data-wow-delay="0.3s">Add to My Calender</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Countdown Section End -->
+        <!-- Sign-up Section Start -->
+        <section id="{{ sections.signup.sectionId }}" class="section-padding sign-up-section">
+            <div class="container">
+                {{ headers.sectionHeader(sections.signup.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="row d-flex flex-rows justify-content-center">
+                    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 mb-3">
+                        <div class="price-block-wrapper wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="icon">
+                                <i class="lni lni-file-pencil"></i>
+                            </div>
+                            <div class="colmun-title">
+                                <h5>{{ sections.signup.title }}</h5>
+                            </div>
+                            <div class="price">
+                                <h2>&euro;{{ sections.signup.price }}</h2>
+                                <!-- <p>@{ text_number_of_spots } spots available <br>(more <strong>might</strong> become available if we reach this
+                                number)</p> -->
+                            </div>
+                            <div class="pricing-list">
+                                <ul>
+                                    <li>
+                                        <i class="lni lni-check"></i>
+                                        <span class="text">Entrance</span>
+                                    </li>
+                                    <li>
+                                        <i class="lni lni-check"></i>
+                                        <span class="text">Surprises</span>
+                                    </li>
+                                    <li>
+                                        <i class="lni lni-check"></i>
+                                        <span class="text">Two days of fun</span>
+                                    </li>
+                                    <li>
+                                        <i class="lni lni-check"></i>
+                                        <span class="text">Eternal glory</span>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <i class="lni lni-xmark"></i>
+                                        <span class="text">Drinks (bring your own)</span>
+                                    </li>
+                                    <li>
+                                        <i class="lni lni-xmark"></i>
+                                        <span class="text">Food (bring your own)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="{{ sections.signup.link }}" target="_blank" class="btn btn-common">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sign-up Section End -->
+        <!-- Map Section Start -->
+        <section id="{{ sections.location.sectionId }}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <object style="border:0; height: 450px; width: 100%;" data="{{ sections.location.googleMapsUrl }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></object>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Map Section End -->
+        <!-- Schedule Section Start -->
+        <section id="{{ sections.eventschedule.sectionId }}" class="schedule section-padding">
+            <div class="container">
+                {{ headers.sectionHeader(sections.eventschedule.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="schedule-area row wow fadeInDown" data-wow-delay="0.3s">
+                    <div class="schedule-tab-title col-md-3 col-lg-3 col-xs-12">
+                        <div class="table-responsive">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                {% for key, day in schedules %}
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if loop.index == 1 %}active{% endif %}" id="{{ key | lower }}-tab" data-toggle="tab" href="#{{ key | lower }}" role="tab" aria-controls="{{ key | lower }}" aria-expanded="true">
+                                            <div class="item-text">
+                                                <h4>{{ key | upper }}</h4>
+                                                <h5>{{ day.date }}</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="schedule-tab-content col-md-9 col-lg-9 col-xs-12 clearfix">
+                        <div class="tab-content" id="myTabContent">
+                            {% for key, day in schedules %}
+                                {% set day_index = loop.index %}
+                                <div class="tab-pane fade show {% if day_index == 1 %}active{% endif %}" id="{{ key | lower }}" role="tabpanel" aria-labelledby="{{ key | lower }}-tab">
+                                    <div id="accordion{{ day_index }}">
+                                        {% for timeslot in day.timeslots %}
+                                            {% set timeslot_index = loop.index %}
+                                            <div class="card">
+                                                <div id="heading{{ timeslot_index }}{{ day_index }}">
+                                                    <div
+                                                        class="collapsed card-header"
+                                                        data-toggle="collapse"
+                                                        data-target="#collapse{{ timeslot_index }}{{ day_index }}"
+                                                        aria-expanded="false"
+                                                        aria-controls="collapse{{ timeslot_index }}{{ day_index }}">
+                                                        <span class="time">{{ timeslot.startTime }} - {{ timeslot.endTime }}</span>
+                                                        <h4>{{ timeslot.title }}</h4>
+                                                    </div>
+                                                </div>
+                                                {% if timeslot.description %}
+                                                    <div
+                                                        id="collapse{{ timeslot_index }}{{ day_index }}"
+                                                        class="collapse {% if timeslot_index == 1 %}show{% endif %}"
+                                                        aria-labelledby="heading{{ timeslot_index }}{{ day_index }}"
+                                                        data-parent="#accordion{{ timeslot_index }}">
+                                                        <div class="card-body">
+                                                            {{ timeslot.description }}
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Schedule Section End -->
+        <!-- Gallery Section Start -->
+        <section id="{{ sections.gallery.sectionId }}" class="section-padding">
+            <div class="container">
+                {{ headers.sectionHeader(sections.gallery.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="row">
+                    {% for galleryImage in gallery.shortlist %}
+                        <div class="col-md-6 col-sm-6 col-lg-4">
+                            <div class="gallery-box">
+                                <div class="img-thumb">
+                                    <picture>
+                                        <img loading="lazy" class="img-fluid" src="{{ galleryImage.src }}" alt="{{ galleryImage.alt }}">
+                                    </picture>
+                                </div>
+                                <div class="overlay-box text-center">
+                                    <a class="lightbox" href="{{ galleryImage.src }}">
+                                        <i class="lni lni-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if gallery.all.length > 6 %}
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-xs-12">
+                            <a href="/gallery/" class="btn btn-common">Browse All</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+        <!-- Gallery Section End -->
+        <!-- Ask Question Section Start -->
+        <section id="{{ sections.faq.sectionId }}" class="section-padding">
+            <div class="container">
+                {{ headers.sectionHeader(sections.faq.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                        <div class="accordion">
+                            {% for faq in faqs.uneven %}
+                                <div class="card">
+                                    <div class="card-header" id="heading-uneven-{{ loop.index }}">
+                                        <h5
+                                            class="header-title d-flex align-items-center"
+                                            data-toggle="collapse"
+                                            data-target="#question-uneven-{{ loop.index }}"
+                                            aria-expanded="true"
+                                            aria-controls="collapse-uneven-{{ loop.index }}">
+                                            <i class="lni lni-pencil-1"></i>
+                                            {{ faq.question }}
+                                        </h5>
+                                    </div>
+                                    <div
+                                        id="question-uneven-{{ loop.index }}"
+                                        class="collapse"
+                                        aria-labelledby="heading-uneven-{{ loop.index }}"
+                                        data-parent="#question">
+                                        <div class="card-body">
+                                            {{ faq.answer | markdown | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                        <div class="accordion">
+                            {% for faq in faqs.even %}
+                                <div class="card">
+                                    <div class="card-header" id="heading-even-{{ loop.index }}">
+                                        <h5
+                                            class="header-title d-flex align-items-center"
+                                            data-toggle="collapse"
+                                            data-target="#question-even-{{ loop.index }}"
+                                            aria-expanded="true"
+                                            aria-controls="collapse-even-{{ loop.index }}">
+                                            <i class="lni lni-pencil-1"></i>
+                                            {{ faq.question }}
+                                        </h5>
+                                    </div>
+                                    <div
+                                        id="question-even-{{ loop.index }}"
+                                        class="collapse"
+                                        aria-labelledby="heading-even-{{ loop.index }}"
+                                        data-parent="#question">
+                                        <div class="card-body">
+                                            {{ faq.answer | markdown | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ask Question Section End -->
+        <!-- Contact Section Start -->
+        <section id="{{ sections.contact.sectionId }}" class="section-padding contact-us">
+            <div class="container">
+                {{ headers.sectionHeader(sections.contact.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-md-12 col-xs-12">
+                        <div class="container-form wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="form-wrapper">
+                                <form role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                                    <div class="row">
+                                        <div class="col-md-6 form-line">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="name" name="firstname" placeholder="{{ sections.contact.namePlaceholder }}" required data-error="{{ sections.contact.nameError }}">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-line">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="{{ sections.contact.emailPlaceholder }}" required data-error="{{ sections.contact.emailError }}">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 form-line">
+                                            <div class="form-group">
+                                                <input type="tel" class="form-control" id="msg_subject" name="subject" placeholder="{{ sections.contact.subjectPlaceholder }}" required data-error="{{ sections.contact.subjectError }}">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="4" id="message" name="message" placeholder="{{ sections.contact.messagePlaceholder }}" required data-error="{{ sections.contact.messageError }}"></textarea>
+                                            </div>
+                                            <div class="form-submit">
+                                                <button type="submit" class="btn btn-common" id="form-submit">
+                                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                    Send Us Now</button>
+                                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section End -->
+        <!-- Supporters Section Start -->
+        <section id="{{ sections.supporters.sectionId }}" class="section-padding">
+            <div class="container">
+                {{ headers.sectionHeader(sections.supporters.title, global.siteTitle, global.tournamentYear, global.tournamentDate) }}
+                <div class="row mb-30 d-flex flex-row justify-content-center wow fadeInDown" data-wow-delay="0.3s">
+                    {% for key, supporter in supporters %}
+                        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                            <div class="spnsors-logo d-flex flex-column align-items-center" style="gap:2rem">
+                                <h4>{{ supporter.name }}</h4>
+                                <a href="{{ supporter.href }}">
+                                    <picture>
+                                        <img class="img-fluid" src="{{ supporter.src }}" alt="{{ supporter.alt }}">
+                                    </picture>
+                                </a>
+                                <a href="{{ supporter.href }}" class="btn btn-common">Visit {{ supporter.name }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- Supporters Section End -->
+        <!-- Footer Start -->
+        <footer class="footer-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+                        <h3>Legal disclaimer</h3>
+                        <p>
+                            {{ sections.footer.content }}
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+                        <h3>QUICK LINKS</h3>
+                        <ul>
+                            <li>
+                                <a href="#header-wrap">Home</a>
+                            </li>
+                            {% for key, section in sections %}
+                                {% if section.includeInNav %}
+                                    <li>
+                                        <a href="#{{ section.sectionId }}">
+                                            {{ section.title }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="widget">
+                            <h5 class="widget-title">FOLLOW US ON</h5>
+                            <ul class="footer-social">
+                                <li>
+                                    <a class="discord" href="https://discord.gg/Wm9anKwC" target="_blank">
+                                        <i class="lni lni-discord"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+                        <h3>SUBSCRIBE US</h3>
+                        <div class="widget">
+                            <div class="newsletter-wrapper">
+                                <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                                    <div class="form-group is-empty">
+                                        <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Your email" required="">
+                                        <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-pointer"></i></button>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h5 class="widget-title">FOLLOW US ON</h5>
+                            <ul class="footer-social">
+                                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="lni-linkedin-original"></i></a></li>
+                                <li><a class="google-plus" href="#"><i class="lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        <!-- Copyright Start -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info">
+                            <p>© Developed by Ivor Grisel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+        <!-- Go to Top Link -->
+        <a href="#" class="back-to-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+        <div id="preloader">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script>
+            {% include "assets/js/jquery-min.js" %}
+            {% include "assets/js/popper.min.js" %}
+            {% include "assets/js/bootstrap.min.js" %}
+            {% include "assets/js/jquery.countdown.min.js" %}
+            {% include "assets/js/jquery.nav.js" %}
+            {% include "assets/js/jquery.easing.min.js" %}
+            {% include "assets/js/wow.js" %}
+            {% include "assets/js/jquery.slicknav.js" %}
+            {% include "assets/js/nivo-lightbox.js" %}
+            {% include "assets/js/main.js" %}
+            {% include "assets/js/form-validator.min.js" %}
+            {% include "assets/js/contact-form-script.min.js" %}
+        </script>
+    </body>
+</html>
